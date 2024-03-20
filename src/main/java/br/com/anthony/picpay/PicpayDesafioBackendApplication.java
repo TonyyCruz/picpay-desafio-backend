@@ -2,9 +2,9 @@ package br.com.anthony.picpay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jdbc.repository.config.EnableJdbcAuditing;
 
-@EnableJpaAuditing
+@EnableJdbcAuditing
 @SpringBootApplication
 public class PicpayDesafioBackendApplication {
 

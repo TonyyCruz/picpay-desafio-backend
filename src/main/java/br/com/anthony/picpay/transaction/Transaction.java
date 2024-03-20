@@ -1,8 +1,8 @@
 package br.com.anthony.picpay.transaction;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
