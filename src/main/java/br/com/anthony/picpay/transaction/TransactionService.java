@@ -1,28 +1,52 @@
 package br.com.anthony.picpay.transaction;
 
-import br.com.anthony.picpay.exception.InvalidTransactionException;
+import br.com.anthony.picpay.authorization.AuthorizerService;
 import br.com.anthony.picpay.exception.NotFoundException;
+import br.com.anthony.picpay.notification.NotificationService;
 import br.com.anthony.picpay.wallet.Wallet;
 import br.com.anthony.picpay.wallet.WalletRepository;
 import br.com.anthony.picpay.wallet.WalletType;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+@Service
 public class TransactionService {
     TransactionRepository transactionRepository;
     WalletRepository walletRepository;
+    AuthorizerService authorizerService;
+    NotificationService notificationService;
 
-    public TransactionService(TransactionRepository transactionRepository, WalletRepository walletRepository) {
+    public TransactionService(
+            TransactionRepository transactionRepository,
+            WalletRepository walletRepository,
+            AuthorizerService authorizerService,
+            NotificationService notificationService
+    ) {
         this.transactionRepository = transactionRepository;
         this.walletRepository = walletRepository;
+        this.authorizerService = authorizerService;
+        this.notificationService = notificationService;
     }
 
-    @Transactional
+    public Transaction findById(Long id) {
+        return transactionRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Transaction not found."));
+    }
+
+    public List<Transaction> findAll() {
+        return transactionRepository.findAll();
+    }
+
+    @Transactional // Desfaz a operação em caso de erro.
     public Transaction create(Transaction transaction) {
         validate(transaction);
         Transaction newTransaction = transactionRepository.save(transaction);
         Wallet payerWallet = findWalletById(transaction.payer());
         walletRepository.save(payerWallet.debit(transaction.value()));
-
+        authorizerService.authorize(transaction);
+        notificationService.notify(transaction);
         return newTransaction;
     }
 
