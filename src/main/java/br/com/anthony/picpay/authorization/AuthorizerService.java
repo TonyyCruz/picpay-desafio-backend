@@ -10,7 +10,7 @@ public class AuthorizerService {
 
     public AuthorizerService(RestClient.Builder builder) {
         this.restClient = builder
-                .baseUrl("localhost:8080/api/authorization")
+                .baseUrl("http://localhost:8080/api/authorization")
                 .build();
     }
 

@@ -13,7 +13,7 @@ public class NotificationController {
 
     @GetMapping
     public Map<String, Boolean> notification() {
-        double random = Math.random();
+        int random = (int) Math.ceil(Math.random() * 10 + 1);
         boolean isNotified = random % 2 == 0;
         Map<String, Boolean> response = new HashMap<>();
         response.put("message", isNotified);

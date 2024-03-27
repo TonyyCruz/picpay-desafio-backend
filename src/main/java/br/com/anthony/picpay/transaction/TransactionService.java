@@ -44,8 +44,10 @@ public class TransactionService {
         validate(transaction);
         Transaction newTransaction = transactionRepository.save(transaction);
         Wallet payerWallet = findWalletById(transaction.payer());
+        Wallet payeeWallet = findWalletById(transaction.payee());
         walletRepository.save(payerWallet.debit(transaction.value()));
         authorizerService.authorize(transaction);
+        walletRepository.save(payeeWallet.credit(transaction.value()));
         notificationService.notify(transaction);
         return newTransaction;
     }

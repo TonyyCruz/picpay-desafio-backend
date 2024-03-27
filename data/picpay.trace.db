@@ -1,0 +1,24 @@
+2024-03-27 16:06:44.764597-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "WALLET" not found; SQL statement:
+SELECT "WALLET"."ID" AS "ID", "WALLET"."CPF" AS "CPF", "WALLET"."TYPE" AS "TYPE", "WALLET"."EMAIL" AS "EMAIL", "WALLET"."BALANCE" AS "BALANCE", "WALLET"."PASSWORD" AS "PASSWORD", "WALLET"."FULL_NAME" AS "FULL_NAME" FROM "WALLET" WHERE "WALLET"."ID" = ? [42102-224]
+2024-03-27 16:46:22.164000-03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:46:26.409042-03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:46:31.110067-03:00 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:46:34.657312-03:00 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:46:46.449171-03:00 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:46:55.952348-03:00 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]
+2024-03-27 16:47:01.817918-03:00 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Timeout trying to lock table "WALLETS"; SQL statement:
+UPDATE "WALLETS" SET "FULL_NAME" = ?, "CPF" = ?, "EMAIL" = ?, "PASSWORD" = ?, "TYPE" = ?, "BALANCE" = ? WHERE "WALLETS"."ID" = ? [50200-224]

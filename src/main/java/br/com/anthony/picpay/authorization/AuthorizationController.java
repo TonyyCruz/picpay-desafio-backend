@@ -13,7 +13,7 @@ public class AuthorizationController {
 
     @GetMapping
     public Map<String, String> authorization() {
-        double random = Math.random();
+        int random = (int) Math.ceil(Math.random() * 10 + 1);
         String isAuthorized = random % 2 == 0 ? "Authorized" : "Rejected";
         Map<String, String> response = new HashMap<>();
         response.put("message", isAuthorized);

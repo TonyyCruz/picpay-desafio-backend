@@ -11,7 +11,7 @@ public class NotificationConsumer {
 
     public NotificationConsumer(RestClient.Builder builder) {
         this.restClient = builder
-                .baseUrl("\"localhost:8080/api/notification")
+                .baseUrl("http://localhost:8080/api/notification")
                 .build();
     }
 
